@@ -2,8 +2,10 @@
   "name": "auth",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "live-mode": "nodemon --watch src --ext ts --exec \"node --loader ts-node/esm\" src/app.ts"
   },
   "keywords": [],
   "author": "",
@@ -11,23 +13,26 @@
   "description": "",
   "dependencies": {
     "@types/jsonwebtoken": "^9.0.10",
+    "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
     "jwt-decode": "^4.0.0",
-    "morgan": "^1.10.1",
     "mysql2": "^3.16.0",
     "zod": "^4.3.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
+    "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/morgan": "^1.9.10",
     "@types/node": "^25.0.7",
     "eslint": "^9.39.2",
+    "morgan": "^1.10.1",
     "nodemon": "^3.1.11",
     "ts-node": "^10.9.2",
     "ts-patch": "^3.3.0",

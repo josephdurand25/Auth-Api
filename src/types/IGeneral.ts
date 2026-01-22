@@ -1,0 +1,1 @@
+export type UserStatut = 'ACTIF' | 'INACTIF' | 'SUSPENDU' | 'BLOQUE';

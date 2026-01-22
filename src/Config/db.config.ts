@@ -1,4 +1,4 @@
-import { createPool, Pool, PoolOptions } from 'mysql2/promise';
+import { createPool, type Pool, type PoolOptions } from 'mysql2/promise';
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -15,6 +15,12 @@ const poolConfig: PoolOptions & { enableKeepAlive?: boolean; keepAliveInitialDel
   keepAliveInitialDelay: 0
 };
 
+class TableSql {
+  static Users = 'utilisateur';
+  static Students = 'etudiant';
+
+}
+
 const pool: Pool = createPool(poolConfig);
 
 // Test de la connexion
@@ -28,5 +34,5 @@ const pool: Pool = createPool(poolConfig);
     process.exit(1);
   }
 })();
-
+export { TableSql };  
 export default pool;
